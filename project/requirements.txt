@@ -1,0 +1,130 @@
+# Focus Sense - Cross-Platform Pomodoro App
+# Requirements and Dependencies
+
+## System Requirements
+- Node.js 16+ (recommended: 18+)
+- npm 8+ or yarn 1.22+
+- Java Development Kit (JDK) 11+ (for Android builds)
+- Android Studio (for Android development)
+- Git
+
+## Node.js Dependencies (automatically installed with npm install)
+
+### Production Dependencies
+react@^18.3.1
+react-dom@^18.3.1
+lucide-react@^0.344.0
+
+### Development Dependencies
+@types/react@^18.3.5
+@types/react-dom@^18.3.0
+@vitejs/plugin-react@^4.3.1
+vite@^5.4.2
+typescript@^5.5.3
+typescript-eslint@^8.3.0
+eslint@^9.9.1
+eslint-plugin-react-hooks@^5.1.0-rc.0
+eslint-plugin-react-refresh@^0.4.11
+@eslint/js@^9.9.1
+globals@^15.9.0
+tailwindcss@^3.4.1
+autoprefixer@^10.4.18
+postcss@^8.4.35
+
+### Capacitor Dependencies (for mobile builds)
+@capacitor/core@latest
+@capacitor/cli@latest
+@capacitor/android@latest
+@capacitor/sqlite@latest
+
+## Installation Steps
+
+### 1. Clone the repository
+git clone <your-repo-url>
+cd focus-sense
+
+### 2. Install Node.js dependencies
+npm install
+
+### 3. Install Capacitor dependencies (for mobile builds)
+npm install @capacitor/core @capacitor/cli @capacitor/android @capacitor/sqlite
+
+### 4. For Android development, install:
+# Android Studio: https://developer.android.com/studio
+# Java JDK 11+: https://adoptium.net/
+
+### 5. Initialize Capacitor (if building for Android)
+npx cap init
+
+### 6. Add Android platform (if building for Android)
+npx cap add android
+
+### 7. Sync Capacitor (after any changes)
+npx cap sync
+
+## Development Commands
+
+### Web Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+
+### Android Development
+npx cap sync android     # Sync web assets to Android
+npx cap open android     # Open in Android Studio
+npx cap run android      # Build and run on device/emulator
+
+## Environment Setup Verification
+
+### Check Node.js version
+node --version       # Should be 16+
+
+### Check npm version
+npm --version        # Should be 8+
+
+### Check Java version (for Android)
+java --version       # Should be 11+
+
+### Check Android SDK (for Android)
+# Verify Android Studio is installed and SDK is configured
+
+## Troubleshooting
+
+### Common Issues:
+1. Node version too old: Update to Node.js 16+
+2. Android build fails: Ensure JDK 11+ and Android Studio are installed
+3. SQLite plugin issues: Run `npx cap sync android` after installation
+4. Permission errors: Use `sudo` on macOS/Linux if needed (not recommended)
+
+### Clean Installation:
+rm -rf node_modules package-lock.json
+npm install
+
+### Reset Capacitor:
+npx cap clean
+npx cap sync
+
+## Platform-Specific Notes
+
+### Windows:
+- Install Node.js from nodejs.org
+- Install Android Studio
+- Install JDK from Oracle or OpenJDK
+
+### macOS:
+- Use Homebrew: `brew install node`
+- Install Android Studio from developer.android.com
+- Install JDK: `brew install openjdk@11`
+
+### Linux (Ubuntu/Debian):
+- Install Node.js: `curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install -y nodejs`
+- Install JDK: `sudo apt install openjdk-11-jdk`
+- Install Android Studio manually from developer.android.com
+
+## Additional Resources
+- React Documentation: https://react.dev/
+- Vite Documentation: https://vitejs.dev/
+- Capacitor Documentation: https://capacitorjs.com/
+- Tailwind CSS: https://tailwindcss.com/
+- Android Development: https://developer.android.com/
